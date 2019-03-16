@@ -9,6 +9,8 @@
   "author": "Laura Greer",
   "license": "ISC",
   "devDependencies": {
+    "cli-table3": "^0.5.1",
+    "dotenv": "^7.0.0",
     "inquirer": "^6.2.2",
     "mysql": "^2.16.0",
     "table": "^5.2.3"
