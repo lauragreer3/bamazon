@@ -38,6 +38,10 @@ Upon launching you are presented with a menu with the following options:
 3. Add to Inventory
 4. Add New Product
 
+### Example 3
+Here is a graphic displaying the products for sale:
+![Alt Text](images/view-products-for-sale.gif)
+
 #### View Products For Sale
 Lists every available item 
 *  ID
@@ -47,9 +51,13 @@ Lists every available item
 
 #### View Low Inventory
 Lists inventory items with a count lower than 5
+### Example 4
+![Alt Text](images/view-low-inventory-table.gif)
 
 #### Add To Inventory
 Displays a prompt for the user to add more of any item already in the database. 
+![Alt Text](images/add-to-inventory.gif)
+![Alt Text](images/add-to-inventory-view-products-table.gif)
 
 #### Add New Product
 Prompts the user to create a new product for the store and requires the following information:
