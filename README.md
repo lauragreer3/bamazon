@@ -17,10 +17,12 @@ If the store can fulfill the order, the database will be updated with the new st
 ### Example 1
 
 Here is a graphic displaying a successful order
+![Alt Text](images/customer-order-success.gif)
 
 ### Example 2
 
 Here is a graphic displaying an order that could not be fulfilled due to insuffient stock quantity.
+![Alt Text](images/customer-order-failure.gif)
 
 ## Manager View
 

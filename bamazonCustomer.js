@@ -48,7 +48,6 @@ var bamazonApp = {
             // app.products = results;
             // console.log(app.products);
             results.forEach(row => {
-                console.log(row.item_id);
                 app.products.push({
                     product_id: row.item_id,
                     name: row.product_name, 
@@ -60,7 +59,6 @@ var bamazonApp = {
                 app.product_table.push([row.item_id, row.product_name, row.department_name, row.price, row.stock_quantity]);                
             });
             app.questions[0].choices = app.product_choices;
-            console.log(app.product_choices);
             app.ask_questions(bamazonApp);
         });
     },
