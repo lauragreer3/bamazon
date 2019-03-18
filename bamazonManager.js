@@ -67,6 +67,54 @@ var bamazonApp = {
                     return true;
                 } else return false;
             }
+        },
+        {
+            type: 'input',
+            name: 'new_product_department',
+            message: 'New Product Department:',
+            validate: function (value) {
+                if (value == "") {
+                    return 'Please enter a department';
+                } else
+                    return true;
+
+            },
+            when: function (answer) {
+                if (answer.manager_menu == 'Add New Product') {
+                    return true;
+                } else return false;
+            }
+        },
+        {
+            type: 'input',
+            name: 'new_product_price',
+            message: 'New Product Price:',
+            validate: function (value) {
+                var valid = !isNaN(parseFloat(value));
+                return valid || 'Please enter a number';
+            },
+            filter: Number,
+            when: function (answer) {
+                if (answer.manager_menu == 'Add New Product') {
+                    return true;
+                } 
+                else return false;
+            }
+        },
+        {
+            type: 'input',
+            name: 'new_product_quantity',
+            message: 'New Product Quantity:',
+            validate: function (value) {
+                var valid = !isNaN(parseFloat(value));
+                return valid || 'Please enter a number';
+            },
+            filter: Number,
+            when: function (answer) {
+                if (answer.manager_menu == 'Add New Product') {
+                    return true;
+                } else return false;
+            }
         }
     ],
     init: function () {
@@ -133,8 +181,11 @@ var bamazonApp = {
 
                     case "Add to Inventory":
                         bamazonApp.add_to_product_quantity(bamazonApp, answers.add_to_inventory_product, answers.quantity);
+                        break;
 
-
+                    case "Add New Product":  
+                        bamazonApp.add_new_product(bamazonApp, answers.new_product_name, answers.new_product_department, answers.new_product_price, answers.new_product_quantity);
+                        break;
                     default:
                         // console.log('Menu Error');
                         break;
@@ -188,6 +239,13 @@ var bamazonApp = {
             if (error) throw error;
             console.log('Product database updated added ' + quantity_to_add + ' for product ' + product_name);
         });
+    },
+    add_new_product: function(app, product_name, product_department, product_price, product_quantity) {
+        var create_query = "INSERT INTO products (product_name, department_name, price, stock_quantity) VALUES ('" + product_name + "', '"+ product_department + "', '" + product_price + "', '" + product_quantity + "')";
+        connection.query(create_query, function(error, results, fields) {
+            if(error) throw error;
+            console.log('Product added to database.')
+        })
     },
     cleanup: function () {
         connection.end();

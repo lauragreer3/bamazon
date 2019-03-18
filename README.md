@@ -65,6 +65,10 @@ Prompts the user to create a new product for the store and requires the followin
 *   Price
 *   Quantity
 
+### Example 5
+Create new product:
+![Alt Text](images/create-new-products-table.gif)
+
 ## Supervisor View
 
 ### Usage
